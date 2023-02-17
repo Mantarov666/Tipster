@@ -11,7 +11,7 @@ import { PredictionMatches } from "../preDetails/PredictionMatches"
 export const Prediction = () => { 
 
     const {matches} = useContext(AuthContex)
-console.log(matches)
+
     return (
 
 
