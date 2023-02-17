@@ -1,5 +1,5 @@
 
-import styles from './PredictionDetails.module.css'
+
     import { useContext } from 'react'
     import { AuthContex } from '../../context/AuthContext'
 import { Link } from 'react-router-dom'
@@ -15,7 +15,7 @@ console.log(props)
        
         <div className="cardContainer" style={{width:'60%', justifyContent:'space-around', backgroundColor:'gray',margin:'20px', borderRadius:'10px',height:'190px', gap:'10px' }}>
           <div className="cardHeading" style={{display:'flex', alignItems:'center', gap:'10px', marginTop:'15px', marginLeft:'10px'}}>
-           <span className={styles.cardButton}>tipster: </span> <h5>{props.match.autor}</h5>
+           <span >tipster: </span> <h5>{props.match.autor}</h5>
           </div>
           <hr />
           <div className="cardBody" style={{display:'flex', justifyContent:'space-around'}}>

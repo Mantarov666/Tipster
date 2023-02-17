@@ -7,7 +7,7 @@ import { AuthContex } from "../../context/AuthContext"
 export const Header = () => { 
 
 const {user} = useContext(AuthContex)
-console.log(user)
+
 
     return (
 
