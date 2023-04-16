@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { AuthContex } from "../../context/AuthContext"
 import { getOne } from "../../service/matchService"
@@ -6,19 +6,24 @@ import { Comments } from "../coments/Comments"
 
 export const PredictionDetails = () => {
 const navigate = useNavigate()
+ const params = useParams()
+ 
+  
 
+    useEffect(()=> {
+getOne(params.id).then(rez => {
+        setMatchDet(rez)
+    })
+    }, []) 
     const {user} = useContext(AuthContex)
-    const [matchDet, setMatchDet] = useState([])
+    const [matchDet, setMatchDet] = useState("")
     const [clicked, isClicked] = useState(false)
     const onCliked = (e) => {
         e.preventDefault()
         isClicked(!clicked)
     }
 
- const params = useParams()
- getOne(params.id).then(rez => {
-        setMatchDet(rez)
-    })
+
 
 const onSubmit = (e) =>{
 e.preventDefault()
