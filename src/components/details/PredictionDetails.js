@@ -11,10 +11,10 @@ const navigate = useNavigate()
   
 
     useEffect(()=> {
-getOne(params.id).then(rez => {
+      getOne(params.id).then(rez => {
         setMatchDet(rez)
     })
-    }, []) 
+    }, []) ; 
     const {user} = useContext(AuthContex)
     const [matchDet, setMatchDet] = useState("")
     const [clicked, isClicked] = useState(false)
@@ -36,6 +36,7 @@ const info = inputData.get('textarea')
         accessToken : user.accessToken,
        author, 
        coment : info
+       
     }
 
   if(info.length > 0){
@@ -81,9 +82,13 @@ navigate(`/prediction/${params.id}/comentary`)
             <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '250px', gap: '10px' }}>
                 <h3> Comments: <Link to={`/prediction/${params.id}/comentary`}    > <button style={{ fontSize: '15px', borderRadius: '10px' }}>view </button></Link> </h3>
                 {/* <Link to='/addComent'> <button type="submit" >Add comment</button></Link> */}
-                <button onClick={onCliked} type='submit'>Add comment</button>
-                {clicked
-                    ? <div>
+                { !clicked  ?<button onClick={onCliked} type='submit'>Add comment</button>:<></>}
+               
+                { clicked
+                   
+                       
+                     ?  <div>
+        
                         <form onSubmit={onSubmit} style={{ gap: '15px', alignItems: 'center' }}>
                             <div>
                                 <label htmlFor="user"></label>
@@ -100,8 +105,10 @@ navigate(`/prediction/${params.id}/comentary`)
 
                         </form>
                     </div>
+                         : <></>
+                   
 
-                    : <></>}
+                    }
             </div>
         </div>
 

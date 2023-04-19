@@ -6,7 +6,7 @@ import { Coment } from "../coments/Coment"
 
 export const Comments = () => { 
 const params = useParams()
-console.log(params.id)
+
 const [coment, setComent] = useState([])
 useEffect(()=>{
     fetch(`http://localhost:3030/jsonstore/comentary/${params.id}`)

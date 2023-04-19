@@ -15,7 +15,7 @@ import { useLocaleStorage } from './hooks/useLocale';
 import { Prediction } from './components/prediction/Prediction';
 import { getAll } from './service/matchService';
 import { PredictionDetails } from './components/details/PredictionDetails';
-
+import { EditPage } from './components/edit/EditPage';
 import { Comments } from './components/coments/Comments';
 
 
@@ -32,7 +32,7 @@ useEffect(()=>{
   })
 }, [])
 
-console.log(matches)
+
 
 const userLogin = (authInfo) => { 
   setAuth(authInfo)
@@ -55,6 +55,7 @@ const userLogout = () => {
         <Route path ='/prediction' element= {<Prediction/>} />
         <Route path = '/prediction/:id/details' element={<PredictionDetails/>} /> 
         <Route path='/prediction/:id/comentary' element={<Comments/>} />
+        <Route path='/edit/:id/:_id' element={<EditPage/>} />
       </Routes>
     </div>
 </AuthContex.Provider>

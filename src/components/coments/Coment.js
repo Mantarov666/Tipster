@@ -1,15 +1,15 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { AuthContex } from "../../context/AuthContext"
 import styles from "../coments/style.module.css"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 
 export const Coment =(props)=> { 
 const navigate = useNavigate()
 const params = useParams()
 const { user } = useContext(AuthContex)
-console.log(props.data)
 
+// console.log(props.data._id)
 
 const onDel = (e) => { 
     e.preventDefault()
@@ -18,6 +18,18 @@ const onDel = (e) => {
     })
     navigate (`/prediction/${params.id}/details`)
 }
+
+
+const onEdit = (e) => { 
+    e.preventDefault()
+    navigate(`/edit/${params.id}/${props.data._id}`)
+}
+
+// const [clicked, isClicked] = useState(false)
+//     const editClick = (e) => {
+//         e.preventDefault()
+//         isClicked(!clicked)
+//     }
 
 
 
@@ -30,6 +42,20 @@ const onDel = (e) => {
                
              <strong>:</strong> <h4 style={{fontStyle:'italic'}}> " {props.data.coment}"</h4>   
              {user.accessToken == props.data.accessToken &&  <button onClick={onDel} >Delete</button> }
+
+             {user.accessToken == props.data.accessToken &&  <Link to={`/edit/${params.id}/${props.data._id}`}>  <button  onClick={onEdit} >Edit</button> </Link>}
+
+             {/* { clicked 
+             ? 
+             <div>
+                 <label htmlFor="comentary"></label>
+                 <textarea name="textarea" id="comentary" style={{ width: '300px', height: '100px', border: 'solid', borderRadius: '15px' }} placeholder='Comment...'></textarea>
+     
+             </div>
+            
+           
+            :  <p></p>} */}
+
            
            
             </div>

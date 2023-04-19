@@ -22,9 +22,6 @@ export const UserComents = () => {
 
 
 
-
-
-
     return (
         <div style={{ border: 'solid', borderRadius: '15px', width: '80%', height: '60px', }}>
             <form onSubmit={onSubmit}>
