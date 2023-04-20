@@ -41,14 +41,14 @@ const info = inputData.get('textarea')
 
   if(info.length > 0){
 
-fetch(`http://localhost:3030/jsonstore/comentary/${params.id}`, {
+fetch(`http://localhost:3030/jsonstore/comentary/1`, {
     method:'POST',
     headers: {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
  })
-navigate(`/prediction/${params.id}/comentary`)
+navigate(`/prediction/1/comentary`)
 
 
   }
@@ -63,25 +63,51 @@ navigate(`/prediction/${params.id}/comentary`)
    
     return (
 
+        // <div className="cards" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', backgroundColor: 'lightgrey' }}>
+
+        //     <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '190px', gap: '10px' }}>
+        //         <div className="cardHeading" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: '10px' }}>
+        //             <span >tipster: </span> <h5>{matchDet.autor}</h5>
+        //         </div>
+        //         <hr />
+        //         <div className="cardBody" style={{ display: 'flex', justifyContent: 'space-around' }}>
+        //             <h2 >{matchDet.home}</h2> <h3>{matchDet.hGoals}</h3> <h2>vs</h2> <h3>{matchDet.aGoals}</h3><h2>{matchDet.away}</h2>
+
+
+        //         </div>
+        //     </div>
+        //     <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '190px', gap: '10px' }}>
+        //         <h3> Analysis</h3>
+        //         {matchDet.analis}</div>
+        //     <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '250px', gap: '10px' }}>
+        //         <h3> Comments: <Link to={`/prediction/${params.id}/comentary`}    > <button style={{ fontSize: '15px', borderRadius: '10px' }}>view </button></Link> </h3>
+               
+
         <div className="cards" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', backgroundColor: 'lightgrey' }}>
 
-            <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '190px', gap: '10px' }}>
-                <div className="cardHeading" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: '10px' }}>
-                    <span >tipster: </span> <h5>{matchDet.autor}</h5>
-                </div>
-                <hr />
-                <div className="cardBody" style={{ display: 'flex', justifyContent: 'space-around' }}>
-                    <h2 >{matchDet.home}</h2> <h3>{matchDet.hGoals}</h3> <h2>vs</h2> <h3>{matchDet.aGoals}</h3><h2>{matchDet.away}</h2>
-
-
-                </div>
+        <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '190px', gap: '10px' }}>
+            <div className="cardHeading" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: '10px' }}>
+                <span >tipster: </span> <h5> {/*  {matchDet.autor}*/} Vasil Kaloyanov</h5>
             </div>
-            <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '190px', gap: '10px' }}>
-                <h3> Analysis</h3>
-                {matchDet.analis}</div>
-            <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '250px', gap: '10px' }}>
-                <h3> Comments: <Link to={`/prediction/${params.id}/comentary`}    > <button style={{ fontSize: '15px', borderRadius: '10px' }}>view </button></Link> </h3>
-                {/* <Link to='/addComent'> <button type="submit" >Add comment</button></Link> */}
+            <hr />
+            <div className="cardBody" style={{ display: 'flex', justifyContent: 'space-around' }}>
+                <h2 > {/*  {matchDet.home}*/} Manchester City </h2><h3> {/* {matchDet.hGoals}*/} 3 </h3> <h2>vs</h2> <h3> {/*  {matchDet.aGoals}*/} 2 </h3><h2> {/* {matchDet.away}*/} Arsenal</h2>
+
+
+            </div>
+        </div>
+        <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '190px', gap: '10px' }}>
+            <h3> Analysis</h3>
+            Mikel Arteta will come up against his mentor Pep Guardiola for the first time as Arsenal manager when the Gunners take on Manchester City at the Etihad Stadium on Wednesday evening.
+
+The visitors remain in the hunt for a European spot with 10 games of their season to go, while Man City will be hoping to use this rearranged fixture to bounce back from their derby defeat at the hands of Manchester United on Sunday.
+</div>
+        <div className="cardContainer" style={{ width: '60%', justifyContent: 'space-around', backgroundColor: 'gray', margin: '20px', borderRadius: '10px', height: '250px', gap: '10px' }}>
+            <h3> Comments: <Link to={`/prediction/${params.id}/comentary`}    > <button style={{ fontSize: '15px', borderRadius: '10px' }}>view </button></Link> </h3>
+           
+
+
+
                 { !clicked  ?<button onClick={onCliked} type='submit'>Add comment</button>:<></>}
                
                 { clicked

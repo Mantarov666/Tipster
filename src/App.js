@@ -23,14 +23,14 @@ import { Comments } from './components/coments/Comments';
 function App() {
 
 const [auth, setAuth] = useLocaleStorage('auth', {})
-const [matches, setMatch] = useState({})
+// const [matches, setMatch] = useState({})
 
-useEffect(()=>{
-  getAll()
-  .then(rezult=>{
-    setMatch(rezult)
-  })
-}, [])
+// useEffect(()=>{
+//   getAll()
+//   .then(rezult=>{
+//     setMatch(rezult)
+//   })
+// }, [])
 
 
 
@@ -45,7 +45,7 @@ const userLogout = () => {
 console.log(auth)
 
   return (
-<AuthContex.Provider value={{user:auth, userLogin, userLogout, matches}}>
+<AuthContex.Provider value={{user:auth, userLogin, userLogout,}}>
     <div className="App">
       <Header/>
       <Routes>
