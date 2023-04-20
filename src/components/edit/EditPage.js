@@ -26,10 +26,7 @@ const onSubmit = (e) => {
 
     const gameData = Object.fromEntries(new FormData(e.target));
 
-   console.log(gameData.user)
    
-   console.log(params.id)
-   console.log(params._id) 
 
      fetch(`http://localhost:3030/jsonstore/comentary/${params.id}/${params._id}`, {
    headers: {

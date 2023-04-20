@@ -8,7 +8,7 @@ export const PredictionMatches = (props)=> {
 
 const {user }= useContext(AuthContex)
 
-
+console.log(user)
     return(
        
        <div className="cards" style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'40px',  backgroundColor:'lightgrey'}}>

@@ -42,6 +42,8 @@ const userLogout = () => {
   setAuth({})
 }
 
+console.log(auth)
+
   return (
 <AuthContex.Provider value={{user:auth, userLogin, userLogout, matches}}>
     <div className="App">
